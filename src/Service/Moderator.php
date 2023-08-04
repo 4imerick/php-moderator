@@ -13,7 +13,7 @@ class Moderator
      * @param string $words 
      * @return bool
      */
-    public function checkIfblacklistedWords(string $words): bool
+    public function isBlacklistedWords(string $words): bool
     {
         // We initialize a variable to confirm when a blacklisted word has been found. 
         $isBlackListed = null;

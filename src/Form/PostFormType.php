@@ -37,7 +37,7 @@ class PostFormType extends AbstractType
         $post = $formEvent->getData();
 
         // If the commentary of the post doesn't contains a blacklisted words we submit the form. 
-        if (!$this->moderator->checkIfblacklistedWords($post['commentary'])) {
+        if (!$this->moderator->isBlacklistedWords($post['commentary'])) {
             $formEvent->setData($post);
         }
     }
