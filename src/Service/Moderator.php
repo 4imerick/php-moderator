@@ -16,7 +16,7 @@ class Moderator
     public function checkIfblacklistedWords(string $words): bool
     {
         // We initialize a variable to confirm when a blacklisted word has been found. 
-        $isBlackListed = false;
+        $isBlackListed = null;
 
         // We use the PHP function explode() to create a array from the string. 
         $words = explode(" ", $words);
