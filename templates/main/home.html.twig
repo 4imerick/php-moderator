@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Home |
+	{{ parent() }}
+{% endblock %}
+
+{# START: home #}
+{% block body %}
+	<h2 class="page__h2 page__h_color_glaucous">PHP Moderator</h2>
+	<div class="andromeda">
+		<div
+			class="galatea galatea_background-color_glaucous galatea_color_black">
+			{# This blacklisted words have to be the same as the one of the PHP constants BLACKLISTED_WORDS located in the Moderator Service #}
+			<p>
+				<strong>Blacklisted Words</strong>:
+				<ul>
+					<li>Fuck</li>
+					<li>Fucking</li>
+					<li>Asshole</li>
+					<li>Butthole</li>
+					<li>Scumbag</li>
+					<li>Faggot</li>
+					<li>Bitch</li>
+					<li>Bitches</li>
+					<li>Hoe</li>
+					<li>Hoes</li>
+					<li>Bullshit</li>
+					<li>Shit</li>
+				</ul>
+			</p>
+		</div>
+	</div>
+	<section class="neptune">
+		{{ form_start(postForm, { 'attr': { 'novalidate': 'novalidate', 'class': 'form', 'id': 'post-form' }}) }}
+		{# commentary #}
+		<div class="form-field">
+			{{ form_label(postForm, 'Commentary:', { 'label_attr': { 'class': 'form-field__label form-field__commentary-name-label display-none' }}) }}
+			{{ form_widget(postForm.commentary, { 'id': 'post-commentary-input', 'attr': {'class': 'form-field__input form-field__post-commentary-input form-field__input_color_black', 'placeholder': 'Commentary' }}) }}
+			{{ form_errors(postForm.commentary) }}
+		</div>
+		{# postForm submit button #}
+		<button type="submit" class="page__button page__create-button page__submit-button page__button_background-color_glaucous page__button_color_black" id="post-create-button">
+			Submit
+		</button>
+		{{ form_end(postForm) }}
+	</section>
+{% endblock %}
+{# END: home #}
