@@ -21,7 +21,6 @@ class Moderator
         // We use the PHP function explode() to create a array from the string. 
         $words = explode(" ", $words);
 
-        // We iterate on each word of the commentary array who contains a list of words. 
         foreach ($words as $word) {
             foreach (Moderator::SPECIAL_CHARACTERS as $specialCharacter) {
                 // We use the PHP function strlen() to get the lengt of the word and we precise "-1" to extract the last character of the word.
